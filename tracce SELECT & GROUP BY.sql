@@ -54,6 +54,9 @@ GROUP BY YEAR(enrolment_date);
 
 
 -- 3. Calcolare la media dei voti di ogni appello d'esame
-
+SELECT `exam_id`, ROUND(AVG(`vote`)) AS 'media voti per ogni appello' 
+FROM `exam_student`
+WHERE `vote` >= 18
+GROUP BY `exam_id`;
 
 -- 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
