@@ -11,9 +11,9 @@ FROM `courses`
 where `cfu` > 10;
 
 -- 3. Selezionare tutti gli studenti che hanno più di 30 anni
-SELECT `name`, `surname`, `date_of_birth`
+SELECT `name`, `surname`, YEAR(date_of_birth) AS 'Anno di nascita'
 FROM `students`
-WHERE YEAR(date_of_birth) < 1993;
+WHERE (YEAR(date_of_birth) + 30) < YEAR(CURDATE());
 
 -- 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea (286)
 SELECT `name`, `year`, `period` 
